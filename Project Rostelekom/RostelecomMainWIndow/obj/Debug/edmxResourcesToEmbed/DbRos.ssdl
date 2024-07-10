@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_RostelecomModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AllUsers">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patronymic" Type="nvarchar" MaxLength="50" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Position" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="IdClient" />
+    </Key>
+    <Property Name="IdClient" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Patronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="bigint" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EquipmentList">
+    <Key>
+      <PropertyRef Name="IdEquipment" />
+    </Key>
+    <Property Name="IdEquipment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="Price" Type="money" />
+  </EntityType>
+  <EntityType Name="InstalledEquipment">
+    <Key>
+      <PropertyRef Name="IdCE" />
+    </Key>
+    <Property Name="IdCE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdClient" Type="int" Nullable="false" />
+    <Property Name="IdEquipment" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InstalledServices">
+    <Key>
+      <PropertyRef Name="IdES" />
+    </Key>
+    <Property Name="IdES" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdClient" Type="int" Nullable="false" />
+    <Property Name="IdService" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ServicesList">
+    <Key>
+      <PropertyRef Name="IdService" />
+    </Key>
+    <Property Name="IdService" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="Price" Type="money" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_InstalledEquipment_Clients">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+    <End Role="InstalledEquipment" Type="Self.InstalledEquipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="IdClient" />
+      </Principal>
+      <Dependent Role="InstalledEquipment">
+        <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InstalledEquipment_EquipmentList">
+    <End Role="EquipmentList" Type="Self.EquipmentList" Multiplicity="1" />
+    <End Role="InstalledEquipment" Type="Self.InstalledEquipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EquipmentList">
+        <PropertyRef Name="IdEquipment" />
+      </Principal>
+      <Dependent Role="InstalledEquipment">
+        <PropertyRef Name="IdEquipment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InstalledServices_Clients">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+    <End Role="InstalledServices" Type="Self.InstalledServices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="IdClient" />
+      </Principal>
+      <Dependent Role="InstalledServices">
+        <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InstalledServices_ServicesList">
+    <End Role="ServicesList" Type="Self.ServicesList" Multiplicity="1" />
+    <End Role="InstalledServices" Type="Self.InstalledServices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServicesList">
+        <PropertyRef Name="IdService" />
+      </Principal>
+      <Dependent Role="InstalledServices">
+        <PropertyRef Name="IdService" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB_RostelecomModelStoreContainer">
+    <EntitySet Name="AllUsers" EntityType="Self.AllUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EquipmentList" EntityType="Self.EquipmentList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InstalledEquipment" EntityType="Self.InstalledEquipment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InstalledServices" EntityType="Self.InstalledServices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServicesList" EntityType="Self.ServicesList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_InstalledEquipment_Clients" Association="Self.FK_InstalledEquipment_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="InstalledEquipment" EntitySet="InstalledEquipment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstalledEquipment_EquipmentList" Association="Self.FK_InstalledEquipment_EquipmentList">
+      <End Role="EquipmentList" EntitySet="EquipmentList" />
+      <End Role="InstalledEquipment" EntitySet="InstalledEquipment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstalledServices_Clients" Association="Self.FK_InstalledServices_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="InstalledServices" EntitySet="InstalledServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstalledServices_ServicesList" Association="Self.FK_InstalledServices_ServicesList">
+      <End Role="ServicesList" EntitySet="ServicesList" />
+      <End Role="InstalledServices" EntitySet="InstalledServices" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,140 @@
+﻿<Window x:Class="RostelecomMainWIndow.Equipment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RostelecomMainWIndow"
+        mc:Ignorable="d"
+                Title="Архив приобретенных товаров" Height="650" Width="600"
+        WindowStartupLocation="CenterScreen" Icon="Resources/IconRos.png" ResizeMode="NoResize" MouseDown="Window_MouseDown"
+        Background="Transparent" AllowsTransparency="True" WindowStyle="None" FontFamily="Yu Gothic UI" Loaded="Window_Loaded">
+    <Grid>
+        <Grid>
+            <Border CornerRadius="50" BorderThickness="5">
+                <Border CornerRadius="50">
+                    <Border.Background>
+                        <ImageBrush ImageSource="Resources/IconRos.png"/>
+                    </Border.Background>
+                    <Border CornerRadius="50" BorderThickness="5" Opacity="1">
+                        <Border.BorderBrush>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#FFA45E" Offset="0"/>
+                                <GradientStop Color="#EC4176" Offset="0.45"/>
+                                <GradientStop Color="#462AD8" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                                <GradientStop Color="#060531" Offset="0"/>
+                                <GradientStop Color="#1B144B" Offset="0.45"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+                </Border>
+            </Border>
+            <Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Архив приобретенных товаров" Foreground="#9A77CF" FontSize="13" Grid.Column="0" VerticalAlignment="Center" Margin="40,10,0,0"/>
+                        <Button x:Name="btnBacks" Background="#9A77CF" BorderThickness="0" Foreground="White" FontSize="20" Cursor="Hand" Grid.Column="1" Click="btnBacks_Click" Margin="0,10,0,0">
+                            <Button.Content>
+                                <Image Source="Resources/Arrow.png" Width="30"/>
+                            </Button.Content>
+                        </Button>
+                        <Button x:Name="btnMinim" Background="#FFA45E" BorderThickness="0" Cursor="Hand" Grid.Column="2" Click="btnMinim_Click" Margin="0,10,0,0">
+                            <Button.Content>
+                                <Image Source="Resources/Minimize.png"/>
+                            </Button.Content>
+                        </Button>
+                        <Button x:Name="btnClose" Background="#EC4176" BorderThickness="0" Cursor="Hand" Grid.Column="3" Click="btnClose_Click" Margin="0,10,0,0">
+                            <Image Source="Resources/Cross.png" Width="20"/>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="85"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="250*"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="Auto" MinHeight="68"/>
+            </Grid.RowDefinitions>
+            <!-- <Label Content="Поиск по названию покупки" HorizontalAlignment="Left" Margin="22,-4,0,0" VerticalAlignment="Top" FontSize="18" Grid.Row="1" Width="288" Foreground="#9A77CF"/>
+            <TextBox Name="tbFindInEqName" HorizontalAlignment="Left" Height="33" Margin="24,30,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" FontSize="20" Grid.RowSpan="2" Background="Transparent" BorderThickness="4" BorderBrush="#9A77CF" Foreground="#9A77CF">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            <Button Grid.Row="1" Name="btnFind" Content="Найти" FontSize="20" Background="#9A77CF" Foreground="#060531" Margin="340,20,0,0" HorizontalAlignment="Left" Width="100" Click="btnFind_Click" FontWeight="Bold">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Row="1" Name="btnUpdate" Content="Обновить" FontSize="20" Background="#9A77CF" Foreground="#060531" Margin="465,20,0,0" HorizontalAlignment="Left" Width="100"  RenderTransformOrigin="0.186,0.545" Click="btnUpdate_Click" FontWeight="Bold" Height="50">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>-->
+            <DataGrid Name="dgvEqPurchases" Margin="24,18,21,10" Grid.Row="2"  AutoGenerateColumns="False" ColumnWidth="*" Background="White" CanUserAddRows="False" CanUserDeleteRows="False" MouseUp="dgvEqPurchases_MouseUp" >
+                <DataGrid.Columns >
+                    <DataGridTextColumn Header="ID покупки" Width="70" Binding="{Binding InstalledEquipment.IdCE}" Foreground="Black"/>
+                    <DataGridTextColumn Header="Название товара" Binding="{Binding EquipmentList.Name}"/>
+                    <DataGridTextColumn Header="ID клиента" Binding="{Binding InstalledEquipment.IdClient}"/>
+                    <DataGridTextColumn Binding="{Binding InstalledEquipment.Date}" Header="Дата покупки"  Width="100" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Grid.Row="3" Name="btnAdd" Width="100" Height="50" Content="Добавить" FontSize="20" FontWeight="Bold" Foreground="#060531" Background="#9A77CF" HorizontalAlignment="Left" Margin="35,0,0,0" Click="btnAdd_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Row="3" Name="btnEdit" Width="100" Height="50" Content="Изменить" FontSize="20" FontWeight="Bold" Foreground="#060531" Background="#9A77CF" HorizontalAlignment="Center" Click="btnEdit_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Row="3" Name="btnDelete" Width="100" Height="50" Content="Удалить" FontSize="20" FontWeight="Bold" Foreground="#060531" Background="#9A77CF" HorizontalAlignment="Right" Margin="0,0,35,0" Click="btnDelete_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Image Source="Resources/IconRosVer2.png" Grid.Row="4" Height="20" Margin="0,0,120,0"/>
+            <Label Foreground="#9A77CF" Content='ПАО "Ростелеком"' Grid.Row="4" FontStyle="Italic" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20"/>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="135"/>
+                    <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

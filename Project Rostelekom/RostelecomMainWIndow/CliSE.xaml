@@ -1,0 +1,109 @@
+﻿<Window x:Class="RostelecomMainWIndow.CliSE"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RostelecomMainWIndow"
+        mc:Ignorable="d"
+        Title="Архив приобретенных товаров и услуг" Height="650" Width="600"
+        WindowStartupLocation="CenterScreen" Icon="Resources/IconRos.png" ResizeMode="NoResize" MouseDown="Window_MouseDown"
+        Background="Transparent" AllowsTransparency="True" WindowStyle="None" FontFamily="Yu Gothic UI">
+    <Grid>
+        <Grid>
+            <Border CornerRadius="50" BorderThickness="5">
+                <Border CornerRadius="50">
+                    <Border.Background>
+                        <ImageBrush ImageSource="Resources/IconRos.png"/>
+                    </Border.Background>
+                    <Border CornerRadius="50" BorderThickness="5" Opacity="1">
+                        <Border.BorderBrush>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#FFA45E" Offset="0"/>
+                                <GradientStop Color="#EC4176" Offset="0.45"/>
+                                <GradientStop Color="#462AD8" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                                <GradientStop Color="#060531" Offset="0"/>
+                                <GradientStop Color="#1B144B" Offset="0.45"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+                </Border>
+            </Border>
+            <Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Архив приобретенных товаров и услуг" Foreground="#9A77CF" FontSize="13" Grid.Column="0" VerticalAlignment="Center" Margin="40,10,0,0"/>
+                        <Button x:Name="btnBacks" Background="#9A77CF" BorderThickness="0" Foreground="White" FontSize="20" Cursor="Hand" Grid.Column="1" Click="btnBacks_Click" Margin="0,10,0,0">
+                            <Button.Content>
+                                <Image Source="Resources/Arrow.png" Width="30"/>
+                            </Button.Content>
+                        </Button>
+                        <Button x:Name="btnMinim" Background="#FFA45E" BorderThickness="0" Cursor="Hand" Grid.Column="2" Click="btnMinim_Click" Margin="0,10,0,0">
+                            <Button.Content>
+                                <Image Source="Resources/Minimize.png"/>
+                            </Button.Content>
+                        </Button>
+                        <Button x:Name="btnClose" Background="#EC4176" BorderThickness="0" Cursor="Hand" Grid.Column="3" Click="btnClose_Click" Margin="0,10,0,0">
+                            <Image Source="Resources/Cross.png" Width="20"/>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="85"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="250*"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="Auto" MinHeight="68"/>
+            </Grid.RowDefinitions>
+            <Label Content="Перейти к товарам" Foreground="#EC4176" Grid.Row="2" FontSize="27" Margin="170,0,0,0" FontWeight="Bold"/>
+            <Button Grid.Row="2" Width="300" Height="70" BorderBrush="#060531" Margin="0,-160,0,0" Name="btnEq" Click="btnEq_Click">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FFA45E" Offset="0"/>
+                        <GradientStop Color="#EC4176" Offset="0.45"/>
+                        <GradientStop Color="#462AD8" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Label Content="Перейти к услугам" Foreground="#EC4176" Grid.Row="2" FontSize="27" Margin="170,185,0,0" FontWeight="Bold"/>
+            <Button Grid.Row="2" Width="300" Height="70" BorderBrush="#060531" Margin="0,200,0,0" Name="btnSer" Click="btnSer_Click">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FFA45E" Offset="1"/>
+                        <GradientStop Color="#EC4176" Offset="0.45"/>
+                        <GradientStop Color="#462AD8" Offset="0"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Image Source="Resources/IconRosVer2.png" Grid.Row="4" Height="20" Margin="0,0,120,0"/>
+            <Label Foreground="#9A77CF" Content='ПАО "Ростелеком"' Grid.Row="4" FontStyle="Italic" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20"/>
+        </Grid>
+    </Grid>
+</Window>

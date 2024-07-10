@@ -1,0 +1,43 @@
+﻿<Page x:Class="ZapSibNeftehim.Pages.Laborant"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ZapSibNeftehim.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Laborant">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="" x:Name="tbUserInfo"/>
+        <ListView Grid.Row="1" Height="300" Width="700" d:ItemsSource="{d:SampleData}" x:Name="lvEmployees" Loaded="lvEmployees_Loaded">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+
+
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding photo}"/>
+                        <Label Content="{Binding lastName}" Grid.Column="1"/>
+                        <Label Content="{Binding firstName}" Grid.Column="2"/>
+                        <Label Content="{Binding Position.name}" Grid.Column="3"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <Button Content="Добавить" x:Name="btnAdd" Click="btnAdd_Click"/>
+            <Button Content="Изменить" x:Name="btnEdit" Click="btnEdit_Click" Margin="10,0"/>
+            <Button Content="Удалить" x:Name="btnDelete" Click="btnDelete_Click" Margin="10,0"/>
+        </StackPanel>
+    </Grid>
+</Page>

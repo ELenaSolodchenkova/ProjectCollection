@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="976be3442a5e49c38e4e48622e1b7e96" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="DB_RostelecomModel.AllUser" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_RostelecomModel.Client" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_RostelecomModel.EquipmentList" Width="1.5" PointX="3.5" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_RostelecomModel.InstalledEquipment" Width="1.5" PointX="7.875" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_RostelecomModel.InstalledService" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_RostelecomModel.ServicesList" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_RostelecomModel.sysdiagram" Width="1.5" PointX="3.25" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="DB_RostelecomModel.FK_InstalledEquipment_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_RostelecomModel.FK_InstalledServices_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_RostelecomModel.FK_InstalledEquipment_EquipmentList" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_RostelecomModel.FK_InstalledServices_ServicesList" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,28 @@
+﻿<Window x:Class="Esoft.SupplyFilter"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Esoft"
+        mc:Ignorable="d"
+        Title="Предожение" Height="401.127" Width="710.553" Icon="Resourse/icon.png"  WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="85"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<Rectangle Grid.Row="0" Fill="#ffee65"/>
+		<Image Source="Resourse/logo.png" HorizontalAlignment="Left" Grid.Row="0" Width="229"/>
+
+		<DataGrid Name="dgvSupply"  Margin="24,18,21,-243" Grid.Row="1" AutoGenerateColumns="False" ColumnWidth="*" Background="White">
+			<DataGrid.Columns>
+				<DataGridTextColumn Binding="{Binding AddressCity}" Header="Город"/>
+				<DataGridTextColumn Binding="{Binding AddressStreet}" Header="Улица"/>
+				<DataGridTextColumn Binding="{Binding AddressHouse}" Header="Дом"/>
+                <DataGridTextColumn Binding="{Binding AddressNumder}" Header="Квартира"/>
+				<DataGridTextColumn Binding="{Binding Price}" Header="Цена"/>
+			</DataGrid.Columns>
+		</DataGrid>
+	</Grid>
+</Window>

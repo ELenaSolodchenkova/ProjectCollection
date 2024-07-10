@@ -1,0 +1,134 @@
+C:\Users\admin\Desktop\Esoft\Esoft\bin\Debug\Esoft.exe.config
+C:\Users\admin\Desktop\Esoft\Esoft\bin\Debug\Esoft.exe
+C:\Users\admin\Desktop\Esoft\Esoft\bin\Debug\Esoft.pdb
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\Esoft.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\MainWindow.g.cs
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\App.g.cs
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\Esoft_MarkupCompile.cache
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\Esoft_MarkupCompile.lref
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\MainWindow.baml
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\Esoft.g.resources
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\Esoft.Properties.Resources.resources
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\Esoft.csproj.GenerateResource.cache
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\Esoft.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\Esoft.exe
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\Esoft.pdb
+C:\Users\admin\Desktop\Esoft\Esoft\bin\Debug\EntityFramework.dll
+C:\Users\admin\Desktop\Esoft\Esoft\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\admin\Desktop\Esoft\Esoft\bin\Debug\EntityFramework.xml
+C:\Users\admin\Desktop\Esoft\Esoft\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\admin\Desktop\Esoft\Esoft\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\Esoft_Content.g.cs
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\Esoft.csproj.CopyComplete
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\ClientEdit.g.cs
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\ClientEdit.baml
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\ClientList.g.cs
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\ClientList.baml
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\AgentList.g.cs
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\AgentList.baml
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\AgentEdit.g.cs
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\AgentEdit.baml
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\RealEstateList.g.cs
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\RealEstateList.baml
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\RealEstateEdit.g.cs
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\RealEstateEdit.baml
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\SupplyFilter.g.cs
+C:\Users\admin\Desktop\Esoft\Esoft\obj\Debug\SupplyFilter.baml
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\bin\Debug\Esoft.exe.config
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\Esoft.exe
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\Esoft.pdb
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\bin\Debug\Esoft.exe
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\bin\Debug\Esoft.pdb
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\bin\Debug\EntityFramework.dll
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\bin\Debug\EntityFramework.SqlServer.dll
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\bin\Debug\EntityFramework.xml
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\bin\Debug\EntityFramework.SqlServer.xml
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\bin\Debug\ru\EntityFramework.resources.dll
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\Esoft.csprojResolveAssemblyReference.cache
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\AgentEdit.g.cs
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\AgentList.g.cs
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\ClientEdit.g.cs
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\ClientList.g.cs
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\MainWindow.g.cs
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\RealEstateEdit.g.cs
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\RealEstateList.g.cs
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\SupplyFilter.g.cs
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\App.g.cs
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\Esoft_Content.g.cs
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\Esoft_MarkupCompile.cache
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\Esoft_MarkupCompile.lref
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\AgentEdit.baml
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\AgentList.baml
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\ClientEdit.baml
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\ClientList.baml
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\MainWindow.baml
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\RealEstateEdit.baml
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\RealEstateList.baml
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\SupplyFilter.baml
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\Esoft.g.resources
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\Esoft.Properties.Resources.resources
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\Esoft.csproj.GenerateResource.Cache
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\DemandFilter.g.cs
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\DemandFilter.baml
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\SupplyList.g.cs
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\SupplyList.baml
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\DemandList.g.cs
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\DemandList.baml
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\SupplyEdit.g.cs
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\SupplyEdit.baml
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\DemandEdit.g.cs
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\DemandEdit.baml
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\DealList.g.cs
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\DealList.baml
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\DealEdit.g.cs
+D:\Рабочий Стол\Wsr2019\Esoft\Esoft\obj\Debug\DealEdit.baml
+E:\Coding\Esoft\Esoft\bin\Debug\Esoft.exe.config
+E:\Coding\Esoft\Esoft\bin\Debug\Esoft.exe
+E:\Coding\Esoft\Esoft\bin\Debug\Esoft.pdb
+E:\Coding\Esoft\Esoft\bin\Debug\EntityFramework.dll
+E:\Coding\Esoft\Esoft\bin\Debug\EntityFramework.SqlServer.dll
+E:\Coding\Esoft\Esoft\bin\Debug\EntityFramework.xml
+E:\Coding\Esoft\Esoft\bin\Debug\EntityFramework.SqlServer.xml
+E:\Coding\Esoft\Esoft\bin\Debug\ru\EntityFramework.resources.dll
+E:\Coding\Esoft\Esoft\obj\Debug\Esoft.csproj.AssemblyReference.cache
+E:\Coding\Esoft\Esoft\obj\Debug\AgentEdit.g.cs
+E:\Coding\Esoft\Esoft\obj\Debug\AgentList.g.cs
+E:\Coding\Esoft\Esoft\obj\Debug\ClientEdit.g.cs
+E:\Coding\Esoft\Esoft\obj\Debug\ClientList.g.cs
+E:\Coding\Esoft\Esoft\obj\Debug\DealEdit.g.cs
+E:\Coding\Esoft\Esoft\obj\Debug\DealList.g.cs
+E:\Coding\Esoft\Esoft\obj\Debug\DemandEdit.g.cs
+E:\Coding\Esoft\Esoft\obj\Debug\DemandFilter.g.cs
+E:\Coding\Esoft\Esoft\obj\Debug\DemandList.g.cs
+E:\Coding\Esoft\Esoft\obj\Debug\MainWindow.g.cs
+E:\Coding\Esoft\Esoft\obj\Debug\RealEstateEdit.g.cs
+E:\Coding\Esoft\Esoft\obj\Debug\RealEstateList.g.cs
+E:\Coding\Esoft\Esoft\obj\Debug\SupplyEdit.g.cs
+E:\Coding\Esoft\Esoft\obj\Debug\SupplyFilter.g.cs
+E:\Coding\Esoft\Esoft\obj\Debug\SupplyList.g.cs
+E:\Coding\Esoft\Esoft\obj\Debug\App.g.cs
+E:\Coding\Esoft\Esoft\obj\Debug\Esoft_Content.g.cs
+E:\Coding\Esoft\Esoft\obj\Debug\Esoft_MarkupCompile.cache
+E:\Coding\Esoft\Esoft\obj\Debug\Esoft_MarkupCompile.lref
+E:\Coding\Esoft\Esoft\obj\Debug\AgentEdit.baml
+E:\Coding\Esoft\Esoft\obj\Debug\AgentList.baml
+E:\Coding\Esoft\Esoft\obj\Debug\ClientEdit.baml
+E:\Coding\Esoft\Esoft\obj\Debug\ClientList.baml
+E:\Coding\Esoft\Esoft\obj\Debug\DealEdit.baml
+E:\Coding\Esoft\Esoft\obj\Debug\DealList.baml
+E:\Coding\Esoft\Esoft\obj\Debug\DemandEdit.baml
+E:\Coding\Esoft\Esoft\obj\Debug\DemandFilter.baml
+E:\Coding\Esoft\Esoft\obj\Debug\DemandList.baml
+E:\Coding\Esoft\Esoft\obj\Debug\MainWindow.baml
+E:\Coding\Esoft\Esoft\obj\Debug\RealEstateEdit.baml
+E:\Coding\Esoft\Esoft\obj\Debug\RealEstateList.baml
+E:\Coding\Esoft\Esoft\obj\Debug\SupplyEdit.baml
+E:\Coding\Esoft\Esoft\obj\Debug\SupplyFilter.baml
+E:\Coding\Esoft\Esoft\obj\Debug\SupplyList.baml
+E:\Coding\Esoft\Esoft\obj\Debug\Esoft.g.resources
+E:\Coding\Esoft\Esoft\obj\Debug\Esoft.Properties.Resources.resources
+E:\Coding\Esoft\Esoft\obj\Debug\Esoft.csproj.GenerateResource.cache
+E:\Coding\Esoft\Esoft\obj\Debug\Esoft.csproj.CoreCompileInputs.cache
+E:\Coding\Esoft\Esoft\obj\Debug\Esoft.csproj.CopyComplete
+E:\Coding\Esoft\Esoft\obj\Debug\Esoft.exe
+E:\Coding\Esoft\Esoft\obj\Debug\Esoft.pdb

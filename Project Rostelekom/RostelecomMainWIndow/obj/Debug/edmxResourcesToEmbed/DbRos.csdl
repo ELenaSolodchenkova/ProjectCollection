@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_RostelecomModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AllUser">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Position" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="IdClient" />
+    </Key>
+    <Property Name="IdClient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="Int64" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="InstalledEquipments" Relationship="Self.FK_InstalledEquipment_Clients" FromRole="Clients" ToRole="InstalledEquipment" />
+    <NavigationProperty Name="InstalledServices" Relationship="Self.FK_InstalledServices_Clients" FromRole="Clients" ToRole="InstalledServices" />
+  </EntityType>
+  <EntityType Name="EquipmentList">
+    <Key>
+      <PropertyRef Name="IdEquipment" />
+    </Key>
+    <Property Name="IdEquipment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="InstalledEquipments" Relationship="Self.FK_InstalledEquipment_EquipmentList" FromRole="EquipmentList" ToRole="InstalledEquipment" />
+  </EntityType>
+  <EntityType Name="InstalledEquipment">
+    <Key>
+      <PropertyRef Name="IdCE" />
+    </Key>
+    <Property Name="IdCE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdClient" Type="Int32" Nullable="false" />
+    <Property Name="IdEquipment" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_InstalledEquipment_Clients" FromRole="InstalledEquipment" ToRole="Clients" />
+    <NavigationProperty Name="EquipmentList" Relationship="Self.FK_InstalledEquipment_EquipmentList" FromRole="InstalledEquipment" ToRole="EquipmentList" />
+  </EntityType>
+  <EntityType Name="InstalledService">
+    <Key>
+      <PropertyRef Name="IdES" />
+    </Key>
+    <Property Name="IdES" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdClient" Type="Int32" Nullable="false" />
+    <Property Name="IdService" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_InstalledServices_Clients" FromRole="InstalledServices" ToRole="Clients" />
+    <NavigationProperty Name="ServicesList" Relationship="Self.FK_InstalledServices_ServicesList" FromRole="InstalledServices" ToRole="ServicesList" />
+  </EntityType>
+  <EntityType Name="ServicesList">
+    <Key>
+      <PropertyRef Name="IdService" />
+    </Key>
+    <Property Name="IdService" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="InstalledServices" Relationship="Self.FK_InstalledServices_ServicesList" FromRole="ServicesList" ToRole="InstalledServices" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_InstalledEquipment_Clients">
+    <End Role="Clients" Type="Self.Client" Multiplicity="1" />
+    <End Role="InstalledEquipment" Type="Self.InstalledEquipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="IdClient" />
+      </Principal>
+      <Dependent Role="InstalledEquipment">
+        <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InstalledServices_Clients">
+    <End Role="Clients" Type="Self.Client" Multiplicity="1" />
+    <End Role="InstalledServices" Type="Self.InstalledService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="IdClient" />
+      </Principal>
+      <Dependent Role="InstalledServices">
+        <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InstalledEquipment_EquipmentList">
+    <End Role="EquipmentList" Type="Self.EquipmentList" Multiplicity="1" />
+    <End Role="InstalledEquipment" Type="Self.InstalledEquipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EquipmentList">
+        <PropertyRef Name="IdEquipment" />
+      </Principal>
+      <Dependent Role="InstalledEquipment">
+        <PropertyRef Name="IdEquipment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InstalledServices_ServicesList">
+    <End Role="ServicesList" Type="Self.ServicesList" Multiplicity="1" />
+    <End Role="InstalledServices" Type="Self.InstalledService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServicesList">
+        <PropertyRef Name="IdService" />
+      </Principal>
+      <Dependent Role="InstalledServices">
+        <PropertyRef Name="IdService" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbRos" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AllUsers" EntityType="Self.AllUser" />
+    <EntitySet Name="Clients" EntityType="Self.Client" />
+    <EntitySet Name="EquipmentLists" EntityType="Self.EquipmentList" />
+    <EntitySet Name="InstalledEquipments" EntityType="Self.InstalledEquipment" />
+    <EntitySet Name="InstalledServices" EntityType="Self.InstalledService" />
+    <EntitySet Name="ServicesLists" EntityType="Self.ServicesList" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK_InstalledEquipment_Clients" Association="Self.FK_InstalledEquipment_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="InstalledEquipment" EntitySet="InstalledEquipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstalledServices_Clients" Association="Self.FK_InstalledServices_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="InstalledServices" EntitySet="InstalledServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstalledEquipment_EquipmentList" Association="Self.FK_InstalledEquipment_EquipmentList">
+      <End Role="EquipmentList" EntitySet="EquipmentLists" />
+      <End Role="InstalledEquipment" EntitySet="InstalledEquipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstalledServices_ServicesList" Association="Self.FK_InstalledServices_ServicesList">
+      <End Role="ServicesList" EntitySet="ServicesLists" />
+      <End Role="InstalledServices" EntitySet="InstalledServices" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,111 @@
+﻿<Window x:Class="Esoft.DealList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Esoft"
+        mc:Ignorable="d"
+        Title="Сделка" Height="497" Width="978.361" Icon="Resourse/icon.png"  WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="250*"/>
+            <RowDefinition Height="Auto" MinHeight="68"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Grid.Row="0" Fill="#ffee65"/>
+        <Image Source="Resourse/logo.png" HorizontalAlignment="Left" Grid.Row="0" Width="229"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+
+            <Label Foreground="Gray" Grid.Row="1" Grid.Column="0" Content="Услуги для продавца"           HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12"/>
+            <Label Foreground="Gray" Grid.Row="1" Grid.Column="1" Content="Выручка риэтлора продавца"           HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12"/>
+            <Label Foreground="Gray" Grid.Row="1" Grid.Column="2" Content="Услуги для покупателя"             HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12"/>
+            <Label Foreground="Gray" Grid.Row="1" Grid.Column="3" Content="Выручка риэлтора покупателя"        HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12"/>
+            <Label Foreground="Gray" Grid.Row="1" Grid.Column="4" Content="Выручка компании"           HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12"/>
+
+            <Label Foreground="Black" Grid.Column="0" Content="" Name="Lbl1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" />
+            <Label Foreground="Black" Grid.Column="1" Content="" Name="Lbl2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+            <Label Foreground="Black" Grid.Column="2" Content="" Name="Lbl3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+            <Label Foreground="Black" Grid.Column="3" Content="" Name="Lbl4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+            <Label Foreground="Black" Grid.Column="4" Content="" Name="Lbl5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+        </Grid>
+
+        <DataGrid Name="dgvDeal" Margin="24,18,21,10" Grid.Row="2"  AutoGenerateColumns="False" ColumnWidth="*" Background="White" CanUserAddRows="False" CanUserDeleteRows="False" MouseUp="dgvDeal_MouseUp" >
+            <DataGrid.Columns >
+                <DataGridTextColumn Binding="{Binding Supply.IdRealEstate}" Header="Объект"  Width="50"/>
+
+                <DataGridTextColumn Header="Покупатель" >
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat="{}{0} {1} {2}">
+                            <Binding Path= "Demand.Client.FirstName" />
+                            <Binding Path="Demand.Client.MiddleName" />
+                            <Binding Path="Demand.Client.LastName" />
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Риэлтор покупателя" >
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat="{}{0} {1} {2}">
+                            <Binding Path= "Demand.Agent.FirstName" />
+                            <Binding Path="Demand.Agent.MiddleName" />
+                            <Binding Path="Demand.Agent.LastName" />
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Продавец" >
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat="{}{0} {1} {2}">
+                            <Binding Path= "Supply.Client.FirstName" />
+                            <Binding Path="Supply.Client.MiddleName" />
+                            <Binding Path="Supply.Client.LastName" />
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Риэлтор продавца" >
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat="{}{0} {1} {2}">
+                            <Binding Path= "Supply.Agent.FirstName" />
+                            <Binding Path="Supply.Agent.MiddleName" />
+                            <Binding Path="Supply.Agent.LastName" />
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Binding="{Binding Supply.Price}" Header="Цена"  Width="80" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="135"/>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Name="btnAdd" Content="Добавить" FontSize="20" Background="#04a0ff" Foreground="White" Margin="23,10,10,10" Click="btnAdd_Click" />
+            <Button Grid.Column="1" Name="btnEdit" Content="Изменить" FontSize="20" Background="#04a0ff" Foreground="White" Margin="10" Click="btnEdit_Click" />
+            <Button Grid.Column="2" Name="btnDelete" Content="Удалить" FontSize="20" Background="#04a0ff" Foreground="White" Margin="10" Click="btnDelete_Click"/>
+            <Button Grid.Column="3" Name="btnBack" Content="Назад" FontSize="20" Background="#04a0ff" Foreground="White" Margin="10" Click="btnBack_Click"  />
+        </Grid>
+
+    </Grid>
+</Window>

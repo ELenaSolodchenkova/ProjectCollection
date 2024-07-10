@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище Solodchenkova_ZapSibNeftehimModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="patronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pasSeries" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pasNum" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="dateOfBirth" Type="date" Nullable="false" />
+    <Property Name="address" Type="nvarchar" MaxLength="400" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="clientCode" />
+    </Key>
+    <Property Name="clientCode" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="address" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="inn" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="p/c" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="bic" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="ceoName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="contactName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="patronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="positionID" Type="int" Nullable="false" />
+    <Property Name="login" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="orderId" Type="int" Nullable="false" />
+    <Property Name="lastenter" Type="datetime" Nullable="false" />
+    <Property Name="photo" Type="image" />
+  </EntityType>
+  <EntityType Name="LoginHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="employeeId" Type="int" Nullable="false" />
+    <Property Name="enter" Type="date" Nullable="false" />
+    <Property Name="ip" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="orderNum" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="creationDate" Type="date" Nullable="false" />
+    <Property Name="statusID" Type="int" Nullable="false" />
+    <Property Name="closingDate" Type="date" />
+    <Property Name="employeeCode" Type="int" Nullable="false" />
+    <Property Name="time" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderClients">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="orderID" Type="int" Nullable="false" />
+    <Property Name="clientID" Type="nvarchar" MaxLength="9" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderComp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="orderID" Type="int" Nullable="false" />
+    <Property Name="compID" Type="nvarchar" MaxLength="9" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderService">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="orderID" Type="int" Nullable="false" />
+    <Property Name="servicesID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Position">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="code" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="deadlineHour" Type="int" Nullable="false" />
+    <Property Name="deviation" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+    <Property Name="price" Type="money" Nullable="false" />
+    <Property Name="priceComp" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Employee_Position">
+    <End Role="Position" Type="Self.Position" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Position">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="positionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoginHistory_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="LoginHistory" Type="Self.LoginHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LoginHistory">
+        <PropertyRef Name="employeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="employeeCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="statusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderClients_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="OrderClients" Type="Self.OrderClients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="OrderClients">
+        <PropertyRef Name="clientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderClients_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="OrderClients" Type="Self.OrderClients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderClients">
+        <PropertyRef Name="orderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderComp_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="OrderComp" Type="Self.OrderComp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="clientCode" />
+      </Principal>
+      <Dependent Role="OrderComp">
+        <PropertyRef Name="compID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderComp_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="OrderComp" Type="Self.OrderComp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderComp">
+        <PropertyRef Name="orderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderService_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="OrderService" Type="Self.OrderService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderService">
+        <PropertyRef Name="orderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderService_Service">
+    <End Role="Service" Type="Self.Service" Multiplicity="1" />
+    <End Role="OrderService" Type="Self.OrderService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderService">
+        <PropertyRef Name="servicesID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище Solodchenkova_ZapSibNeftehimModelContainer">
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoginHistory" EntityType="Self.LoginHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderClients" EntityType="Self.OrderClients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderComp" EntityType="Self.OrderComp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderService" EntityType="Self.OrderService" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Employee_Position" Association="Self.FK_Employee_Position">
+      <End Role="Position" EntitySet="Position" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoginHistory_Employee" Association="Self.FK_LoginHistory_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="LoginHistory" EntitySet="LoginHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Employee" Association="Self.FK_Order_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Status" Association="Self.FK_Order_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderClients_Client" Association="Self.FK_OrderClients_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="OrderClients" EntitySet="OrderClients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderClients_Order" Association="Self.FK_OrderClients_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="OrderClients" EntitySet="OrderClients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderComp_Company" Association="Self.FK_OrderComp_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="OrderComp" EntitySet="OrderComp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderComp_Order" Association="Self.FK_OrderComp_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="OrderComp" EntitySet="OrderComp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderService_Order" Association="Self.FK_OrderService_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="OrderService" EntitySet="OrderService" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderService_Service" Association="Self.FK_OrderService_Service">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="OrderService" EntitySet="OrderService" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
